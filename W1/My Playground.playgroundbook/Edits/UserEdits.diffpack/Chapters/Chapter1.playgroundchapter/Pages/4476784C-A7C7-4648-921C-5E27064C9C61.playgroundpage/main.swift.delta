@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>let sizes1 = [3, 6, 100]
+let sizes2 = [6, 6, 9]
+let sizes3 = [25, 25, 25]
+let sizes4 = [3, 4, 5]
+
+func checkTriangle(sizes: [Int]){
+    print("The three sizes of the safe zone are: \(sizes[0]), \(sizes[1]), \(sizes[2])")
+    
+    // three sides have the same length
+    if(sizes[0] == sizes[1] &amp;&amp; sizes [1] == sizes[2]){
+        print("It is an Equilateral safe zone")
+    } else if (sizes[0] == sizes[1] || sizes[1] == sizes[2] || sizes[0] == sizes[2]){
+        print("It is an Isosceles safe zone")
+    } else if(sizes[0] + sizes[1] &gt; sizes[2] &amp;&amp; sizes[1] + sizes[2] &gt; sizes[0] &amp;&amp; sizes[0] + sizes[2] &gt; sizes[1]){
+        print("It is a Scalene safe zone")
+    } else{
+        print("Glitch/Not a zone")
+    }
+    print()
+}
+
+checkTriangle(sizes: sizes1)
+checkTriangle(sizes: sizes2)
+checkTriangle(sizes: sizes3)
+checkTriangle(sizes: sizes4)
+
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 844}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

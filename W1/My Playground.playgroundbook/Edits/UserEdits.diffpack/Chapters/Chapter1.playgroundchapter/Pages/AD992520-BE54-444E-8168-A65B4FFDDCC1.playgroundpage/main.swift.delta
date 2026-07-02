@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>let viewCount = -10
+
+func checkViral (views: Int) -&gt; String{
+    // Check valid input
+    if(views &lt;= 0){
+        return "X is not a valid view count"
+    }
+    
+    if(views % 5 == 0 &amp;&amp; views % 6 == 0){
+        return "Your video with X views is viral on both TikTok and Reels!"
+    } else if(views % 5 == 0 || views % 6 == 0){
+        return "Your video with X views is viral on TikTok or Reels, but not both."
+    }else{
+        return "Your video with X views flopped on both platforms."
+    }
+}
+
+let result = checkViral(views: viewCount)
+print(result)
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 557}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
