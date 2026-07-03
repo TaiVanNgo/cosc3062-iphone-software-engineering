@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*
+ Complete the function checkViral(views: Int) -&gt; String to determine the status of a video's views based on whether they are divisible by the algorithm's magic numbers: 5 and 6.
+
+ The function must evaluate the input count and return the appropriate message under these 4 scenarios:
+
+ Scenario A (Divisible by both 5 and 6): Returns "Your video with X views is viral on both TikTok and Reels!" (e.g., input 30).
+ Scenario B (Divisible by 5 or 6, but not both): Returns "Your video with X views is viral on TikTok or Reels, but not both." (e.g., input 10 or 12).
+ Scenario C (Divisible by neither 5 nor 6): Returns "Your video with X views flopped on both platforms." (e.g., input 4).
+ Scenario D (Invalid views - less than or equal to 0): Returns "X is not a valid view count" (e.g., input -10 or 0).
+ */
+
+func checkViral(views: Int) -&gt; String{
+    // invalid input
+    if(views &lt;= 0){
+        return "\(views) is not a valid view count"
+    }
+    
+    // Scenario A
+    if(views % 5 == 0 &amp;&amp; views % 6 == 0){
+        return "Your video with \(views) views is viral on both TikTok and Reels!"
+    } else if(views % 5 == 0 || views % 6 == 0){
+        return "Your video with \(views) views is viral on TikTok or Reels, but not both."
+    } else{
+        return "Your video with \(views) views flopped on both platforms."
+    }
+}
+
+print(checkViral(views: 30))
+print()
+print(checkViral(views: 10))
+print()
+print(checkViral(views: 4))
+print()
+print(checkViral(views: -10))
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1471}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
