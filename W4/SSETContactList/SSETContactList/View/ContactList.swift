@@ -21,3 +21,7 @@ struct ContactList: View {
         }
     }
 }
+
+#Preview {
+    ContactList()
+}

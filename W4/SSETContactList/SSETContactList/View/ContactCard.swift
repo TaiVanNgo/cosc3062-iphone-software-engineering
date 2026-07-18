@@ -13,13 +13,12 @@ struct ContactCard: View {
         ZStack{
             Color("rmit-blue")
                 .ignoresSafeArea()
-            VStack{
+            VStack(){
                 MapView(myLocation: contact.locationCoordinate)
                     .frame(height: 250)
-                    .ignoresSafeArea(edges: .top)
             
                 CircleView(image: contact.image)
-                    .offset(y: -100)
+                    .offset(y: -160)
                     .padding(.bottom, -100)
                 Text(contact.name)
                     .font(.system(size: 40, weight: .bold, design:.serif))
