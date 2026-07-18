@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InfoView: View {
     var text: String
-    var imageName: String
+    var iconName: String
     
     var body: some View{
         RoundedRectangle(cornerRadius: 25)
@@ -17,7 +17,7 @@ struct InfoView: View {
             .frame(height: 50)
             .overlay(
                 HStack{
-                    Image(systemName: imageName)
+                    Image(systemName: iconName)
                         .foregroundStyle(.rmitRed)
                     Text(text)
                         .foregroundStyle(.rmitBlue)
@@ -31,8 +31,8 @@ struct InfoView: View {
         Color("rmit-blue")
             .ignoresSafeArea()
         VStack {
-            InfoView(text: "0123456789", imageName: "phone.fill")
-            InfoView(text: "tom.huynh@rmit.edu.vn", imageName: "envelope.fill")
+            InfoView(text: "0123456789", iconName: "phone.fill")
+            InfoView(text: "tom.huynh@rmit.edu.vn", iconName: "envelope.fill")
         }
     }
 }
