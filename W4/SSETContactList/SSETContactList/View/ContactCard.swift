@@ -18,7 +18,7 @@ struct ContactCard: View {
                     .frame(height: 250)
             
                 CircleView(image: contact.image)
-                    .offset(y: -160)
+                    .offset(y: -100)
                     .padding(.bottom, -100)
                 Text(contact.name)
                     .font(.system(size: 40, weight: .bold, design:.serif))
