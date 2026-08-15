@@ -23,8 +23,7 @@ struct ContactCard: View {
                     .padding(.bottom, -100)
                 Text(contact.name)
                     .font(.system(size: 40, weight: .bold, design: .serif))
-                    .foregroundStyle(.white)
-                
+ 
                 Image("rmit-logo-white")
                     .resizable()
                     .scaledToFit()

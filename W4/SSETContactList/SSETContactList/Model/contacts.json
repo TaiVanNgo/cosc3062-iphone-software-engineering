@@ -1,0 +1,35 @@
+[
+    {
+        "email": "tom.huynh@rmit.edu.vn",
+        "id": 1,
+        "phone": "091232522",
+        "imageName": "tom-huynh",
+        "name": "Tom Huynh",
+        "coordinates": {
+            "latitude": 10.729410965174186,
+            "longitude": 106.69522548892152
+        }
+    },
+    {
+        "email": "brett.kirk@rmit.edu.vn",
+        "id": 2,
+        "phone": "094355634",
+        "imageName": "brett-kirk",
+        "name": "Brett Kirk",
+        "coordinates": {
+            "latitude": 10.758256325746386,
+            "longitude": 106.67228491141948
+        }
+    },
+    {
+        "email": "cuong.nguyen@rmit.edu.vn",
+        "id": 3,
+        "phone": "094355634",
+        "imageName": "cuong-nguyen",
+        "name": "Cuong Nguyen",
+        "coordinates": {
+            "latitude": 10.758256325746386,
+            "longitude": 106.67228491141948
+        }
+    }
+]
