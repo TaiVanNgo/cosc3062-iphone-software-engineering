@@ -48,9 +48,7 @@ struct ContentView: View {
                 if(weatherVM.isLoading){
                     ProgressView("Loading weather...")
 
-                }
-                
-                if let weather = weatherVM.weather {
+                } else if let weather = weatherVM.weather {
                     VStack(alignment: .leading) {
                         HStack(spacing: 15) {
                             Image(systemName: "location.fill")
@@ -91,12 +89,11 @@ struct ContentView: View {
                             .fill(.white)
                             .shadow(radius: 3, x: 4, y: 0)
                     )
-                    
-                    
                 }
-//                else if let errorMessage = weatherVM.errorMessage {
-//                    Text(errorMessage)
-//                }
+                else if let errorMessage = weatherVM.errorMessage {
+                    Text(errorMessage)
+                        .foregroundStyle(.red)
+                }
             }
             .padding()
         }
