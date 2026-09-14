@@ -6,17 +6,19 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
-struct ContentView: View {
+struct ContentView: View {    
+    @State private var user: User?
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        if let user {
+            MovieView(user: user)
+        } else {
+            LoginView(user: $user)
         }
-        .padding()
     }
+    
 }
 
 #Preview {
