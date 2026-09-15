@@ -1,35 +1,32 @@
 //
-//  W11App.swift
-//  W11
+//  BookLibraryApp.swift
+//  BookLibrary
 //
-//  Created by Van Tai on 9/9/26.
+//  Created by Van Tai on 14/9/26.
 //
 
 import SwiftUI
 import SwiftData
 
 @main
-struct W11App: App {
+struct BookLibraryApp: App {
     var sharedModelContainer: ModelContainer = {
-     let schema = Schema([
-        Project.self,
-        TodoItem.self,
-        Tag.self
-     ])
-        
+        let schema = Schema([
+            Book.self,
+            Author.self
+        ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-        
+
         do {
             return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch{
+        } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
-    
-    
+
     var body: some Scene {
         WindowGroup {
-            ProjectListView()
+            BookListView()
         }
         .modelContainer(sharedModelContainer)
     }
