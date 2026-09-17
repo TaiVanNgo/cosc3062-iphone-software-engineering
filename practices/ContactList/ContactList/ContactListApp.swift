@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct ContactListApp: App {
+    @AppStorage("isDarkTheme") private var isDarkTheme = false
+    
     var body: some Scene {
         WindowGroup {
-            ContactList(contacts: Contact.sampleContacts)
+            ContactList(
+                isDarkTheme: $isDarkTheme,
+                contacts: Contact.sampleContacts
+            )
+            .preferredColorScheme(isDarkTheme ? .dark : .light)
         }
     }
 }

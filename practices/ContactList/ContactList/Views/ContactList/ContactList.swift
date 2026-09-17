@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContactList: View {
+    @Binding var isDarkTheme: Bool
+    
     let contacts: [Contact]
     
     var body: some View {
@@ -23,13 +25,26 @@ struct ContactList: View {
             }
             .navigationTitle("SSET Contact List 📒")
             .navigationBarTitleDisplayMode(.large)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(
+                        isDarkTheme ? "Use Light Theme"  : "Use Dark Theme",
+                        systemImage: isDarkTheme ? "moon.fill" : "sun.max.fill",
+                    ) {
+                        isDarkTheme.toggle()
+                    }
+                }
+            }
         }
+        
         
     }
 }
 
 #Preview {
+    @Previewable @State var isDarkTheme = false
     ContactList(
+        isDarkTheme: $isDarkTheme,
         contacts: Contact.sampleContacts
     )
 }

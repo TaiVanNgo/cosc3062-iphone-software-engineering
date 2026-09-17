@@ -16,7 +16,12 @@ struct ContactCard: View {
                 .ignoresSafeArea()
             
             VStack{
+                MapView(location: contact.locationCoordinate)
+                    .frame(height: 250)
+                
                 CircleImage(imageName: contact.imageName)
+                    .offset(y: -100)
+                    .padding(.bottom, -100)
                 
                 Text(contact.name)
                     .font(.largeTitle)
@@ -41,11 +46,13 @@ struct ContactCard: View {
                     )
                 }
                 .padding(.horizontal)
+                
+                Spacer()
             }
         }
         .toolbarBackground(.rmitBlue, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
-        .toolbarColorScheme(.dark, for: .navigationBar) // This makes the back button white
+        .toolbarColorScheme(.dark, for: .navigationBar)
 
     }
 }

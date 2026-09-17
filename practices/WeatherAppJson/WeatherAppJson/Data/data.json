@@ -1,0 +1,52 @@
+[
+  {
+    "id": "hcm",
+    "cityName": "Ho Chi Minh City",
+    "countryCode": "VN",
+    "temperature": 31.0,
+    "humidity": 66,
+    "windSpeed": 6.7,
+    "sunrise": "05:43",
+    "sunset": "18:05"
+  },
+  {
+    "id": "hn",
+    "cityName": "Hanoi",
+    "countryCode": "VN",
+    "temperature": 33.0,
+    "humidity": 57,
+    "windSpeed": 2.2,
+    "sunrise": "05:39",
+    "sunset": "18:15"
+  },
+  {
+    "id": "syd",
+    "cityName": "Sydney",
+    "countryCode": "AU",
+    "temperature": 18.0,
+    "humidity": 44,
+    "windSpeed": 0.9,
+    "sunrise": "03:17",
+    "sunset": "14:35"
+  },
+  {
+    "id": "mel",
+    "cityName": "Melbourne",
+    "countryCode": "AU",
+    "temperature": 15.5,
+    "humidity": 52,
+    "windSpeed": 4.1,
+    "sunrise": "06:12",
+    "sunset": "17:48"
+  },
+  {
+    "id": "tok",
+    "cityName": "Tokyo",
+    "countryCode": "JP",
+    "temperature": 24.0,
+    "humidity": 60,
+    "windSpeed": 3.4,
+    "sunrise": "05:25",
+    "sunset": "17:50"
+  }
+]

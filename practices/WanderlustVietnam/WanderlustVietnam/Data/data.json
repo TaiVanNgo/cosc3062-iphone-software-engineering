@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1001,
+        "name": "Ha Long Bay",
+        "province": "Quang Ninh",
+        "headline": "A breathtaking seascape of limestone pillars and tiny islets.",
+        "description": "Ha Long Bay, in northeast Vietnam, is known for its emerald waters and thousands of towering limestone islands topped with rainforests. Junk boat tours and sea kayak expeditions take visitors past islands named for their shapes, including Stone Dog and Teapot islets.",
+        "imageName": "halong-1",
+        "galleryImages": ["halong-1", "halong-2", "halong-3"]
+    },
+    {
+        "id": 1002,
+        "name": "Hoi An Ancient Town",
+        "province": "Quang Nam",
+        "headline": "A well-preserved example of a Southeast Asian trading port.",
+        "description": "Hoi An is a city on Vietnam’s central coast known for its well-preserved Ancient Town, cut through with canals. The former port city’s melting-pot history is reflected in its architecture, a mix of eras and styles from wooden Chinese shophouses and temples to colorful French colonial buildings.",
+        "imageName": "hoian-1",
+        "galleryImages": ["hoian-1", "hoian-2", "hoian-3"]
+    },
+    {
+        "id": 1003,
+        "name": "Phong Nha Cave",
+        "province": "Quang Binh",
+        "headline": "Home to the world's largest cave and stunning underground rivers.",
+        "description": "Phong Nha-Ke Bang National Park is a protected area in north-central Vietnam's Quang Binh Province. It’s known for its ancient limestone karsts and vast network of caves. The massive Phong Nha Cave is large enough for tour boats to enter its main cavern.",
+        "imageName": "phongnha-1",
+        "galleryImages": ["phongnha-1", "phongnha-2", "phongnha-3"]
+    },
+    {
+        "id": 1004,
+        "name": "Hoan Kiem Lake",
+        "province": "Hanoi",
+        "headline": "The historical and cultural heart of Vietnam's capital.",
+        "description": "Hoan Kiem Lake, meaning 'Lake of the Returned Sword', is a historical lake in the center of Hanoi, Vietnam. It is one of the major scenic spots in the city and serves as a focal point for its public life. The Temple of the Jade Mountain sits on a small island in the middle of the lake.",
+        "imageName": "hanoi-1",
+        "galleryImages": ["hanoi-1", "hanoi-2", "hanoi-3"]
+    }
+]
