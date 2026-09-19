@@ -1,0 +1,50 @@
+[
+  {
+    "id": 101,
+    "name": "Learning Commons",
+    "category": "Study",
+    "building": "Library Building, Level 2",
+    "summary": "A bright shared study space with long tables and charging points.",
+    "description": "The Learning Commons offers open seating for individual work and small study groups. Large windows provide daylight, while power outlets and campus Wi-Fi make it suitable for longer sessions. Keep conversations low so everyone can focus.",
+    "hours": "08:00–21:00",
+    "symbol": "books.vertical.fill",
+    "latitude": 10.72920,
+    "longitude": 106.69300
+  },
+  {
+    "id": 102,
+    "name": "Makerspace",
+    "category": "Create",
+    "building": "Technology Building, Level 1",
+    "summary": "A practical workspace for prototypes, projects, and teamwork.",
+    "description": "The Makerspace provides flexible tables for building and reviewing project work. Students can meet teammates, sketch ideas, and prepare demonstrations. Check the room schedule before planning a group session.",
+    "hours": "09:00–18:00",
+    "symbol": "hammer.fill",
+    "latitude": 10.72865,
+    "longitude": 106.69345
+  },
+  {
+    "id": 103,
+    "name": "Garden Courtyard",
+    "category": "Relax",
+    "building": "Central Courtyard",
+    "summary": "An outdoor break area with trees, benches, and fresh air.",
+    "description": "The Garden Courtyard is a quiet outdoor stop between classes. Shaded seats are available for short breaks or informal conversations. The path through the courtyard connects several teaching buildings.",
+    "hours": "06:00–22:00",
+    "symbol": "leaf.fill",
+    "latitude": 10.72970,
+    "longitude": 106.69255
+  },
+  {
+    "id": 104,
+    "name": "Campus Café",
+    "category": "Food",
+    "building": "Student Centre, Ground Floor",
+    "summary": "Coffee, light meals, and a casual place to meet friends.",
+    "description": "Campus Café serves drinks and simple meals beside the main student walkway. Its tables are best suited to short meetings and breaks. Seating is first come, first served during busy lunch hours.",
+    "hours": "07:30–17:30",
+    "symbol": "cup.and.saucer.fill",
+    "latitude": 10.72895,
+    "longitude": 106.69215
+  }
+]

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Compass | iPhone App Development Test</title>
+  <style>
+    :root{--primary:#483d8b;--secondary:#087f8c;--bg:#f4f6fa;--ink:#1c2633;--muted:#566678;--line:#dce2ea;--study:#5a67d8;--create:#c56736;--relax:#3f8f67;--food:#b6537a}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:#e9edf2;color:var(--ink);font:16px/1.52 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif} a{color:var(--primary)}
+    .sheet{width:min(1180px,calc(100% - 36px));margin:28px auto 70px;background:#fff;box-shadow:0 20px 55px #1e2e4a1b}
+    .masthead{padding:46px 54px 38px;color:#fff;background:linear-gradient(120deg,#25204e 0%,#483d8b 55%,#087f8c 100%)}
+    .eyebrow{margin:0 0 24px;font-size:12px;font-weight:800;letter-spacing:.17em;text-transform:uppercase;color:#dad7f2}
+    h1{margin:0;font-size:clamp(38px,5.2vw,62px);letter-spacing:-.05em;line-height:1.03}.subtitle{margin:12px 0 28px;font-size:20px;color:#e4e3f5}
+    .meta{display:grid;grid-template-columns:repeat(4,1fr);gap:17px;border-top:1px solid #ffffff55;padding-top:20px}.meta small{display:block;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#d7d7e9}.meta strong{display:block;font-size:16px;margin-top:3px}
+    main{padding:42px 54px 60px}.lead{max-width:880px;font-size:18px}h2{margin:47px 0 14px;font-size:27px;letter-spacing:-.025em}h3{margin:0 0 12px;font-size:23px}p{margin:10px 0 15px}ul,ol{padding-left:23px}li{margin:7px 0}
+    .intro{display:grid;grid-template-columns:1.15fr .85fr;gap:20px;margin:25px 0}.box{border:1px solid var(--line);border-radius:15px;padding:22px 25px}.box.tinted{background:#f6f7fc}.box h2{margin-top:0}.box ol{margin-bottom:0}.file-link{display:inline-flex;padding:9px 13px;border-radius:8px;background:#eae8f6;text-decoration:none;font-weight:700}
+    .table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:10px 12px;border:1px solid var(--line);vertical-align:top;text-align:left}th{background:#eceef8}td.score,th.score{text-align:right;white-space:nowrap}.swatch{display:inline-block;width:15px;height:15px;border:1px solid #0002;border-radius:4px;vertical-align:-3px;margin-right:7px}
+    .task{display:grid;grid-template-columns:minmax(0,1fr) 326px;gap:38px;align-items:start;border-top:1px solid var(--line);padding:38px 0 35px}.task-id{font-size:12px;font-weight:850;letter-spacing:.13em;color:var(--primary);margin-right:9px;vertical-align:4px}.marks{float:right;background:#edeaf8;color:var(--primary);font-size:12px;font-weight:800;padding:5px 9px;border-radius:6px}.task li{margin-bottom:10px}
+    .preview-label{margin:0 0 10px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;text-align:center;color:#607080}.phone{position:relative;width:292px;height:610px;margin:auto;border:7px solid #1a2030;border-radius:40px;overflow:hidden;background:var(--bg);box-shadow:0 16px 34px #20324b35}.phone:before{content:"";position:absolute;z-index:5;top:7px;left:50%;transform:translateX(-50%);width:76px;height:14px;background:#1a2030;border-radius:0 0 11px 11px}.screen{height:100%;background:var(--bg);overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.status{height:33px;padding:7px 21px 0;display:flex;justify-content:space-between;font-size:10px;font-weight:700;color:#1d2432}.caption{max-width:292px;text-align:center;color:#627080;font-size:12px;line-height:1.4;margin:11px auto 0}
+    .compass{position:relative;width:128px;height:128px;border-radius:50%;background:#fff;border:6px solid #e0dcf6;box-shadow:0 9px 22px #493d8b2a}.compass:before{content:"";position:absolute;inset:14px;border:2px solid #d7d0f2;border-radius:50%}.compass:after{content:"N";position:absolute;left:50%;top:4px;transform:translateX(-50%);color:var(--primary);font-size:11px;font-weight:850}.needle{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(35deg);width:0;height:0;border-left:13px solid transparent;border-right:13px solid transparent;border-bottom:55px solid var(--primary);filter:drop-shadow(0 2px 2px #0003)}.needle:after{content:"";position:absolute;top:53px;left:-13px;width:0;height:0;border-left:13px solid transparent;border-right:13px solid transparent;border-top:55px solid #51bec2}.needle-dot{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:13px;height:13px;background:#fff;border-radius:50%;border:3px solid var(--primary)}
+    .welcome-screen{display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:26px}.welcome-screen h4{margin:26px 0 1px;color:var(--primary);font-size:30px;letter-spacing:-.045em;line-height:1.1}.welcome-screen .tagline{color:var(--secondary);font-size:14px;font-weight:650}.welcome-screen .student{margin-top:22px;color:#667484;font-size:12px;line-height:1.6}.cta{margin-top:26px;background:var(--primary);color:#fff;border-radius:12px;padding:12px 24px;font-size:13px;font-weight:750;box-shadow:0 7px 15px #483d8b35}
+    .nav-large{display:flex;justify-content:space-between;align-items:end;height:58px;padding:2px 15px 8px;background:#fff}.nav-large b{font-size:28px;letter-spacing:-.05em}.nav-icons{display:flex;gap:14px;color:var(--primary);font-size:22px;line-height:1}.mini-count{padding:13px 15px 9px;background:#fff}.mini-count strong{display:block;color:var(--primary);font-size:12px}.progress{height:7px;background:#e8e9f0;border-radius:9px;margin-top:6px;overflow:hidden}.progress span{display:block;width:50%;height:100%;background:var(--secondary)}.segmented{display:flex;margin:7px 14px 9px;padding:3px;border-radius:9px;background:#e8eaf0;font-size:12px;font-weight:650;text-align:center}.segmented span{width:50%;padding:5px}.segmented .selected{background:#fff;border-radius:7px;box-shadow:0 1px 3px #0002}.spot-row{display:flex;align-items:center;gap:11px;padding:8px 14px;background:#fff;min-height:83px}.symbol-bubble{flex:none;display:flex;align-items:center;justify-content:center;width:55px;height:55px;border-radius:50%;color:#fff;font-size:25px;font-weight:750}.study{background:var(--study)}.create{background:var(--create)}.relax{background:var(--relax)}.food{background:var(--food)}.spot-row strong{display:block;font-size:15px;line-height:1.12}.spot-row small{display:block;color:#6a7683;font-size:10px}.spot-row em{display:block;margin-top:3px;color:var(--secondary);font-size:10px;font-style:normal}.check{margin-left:auto;color:var(--secondary);font-size:19px}
+    .nav-small{height:43px;padding:0 13px;background:#fff;display:flex;align-items:center;justify-content:space-between;font-size:12px}.back{color:var(--primary)}.nav-small b{font-size:13px}.detail-hero{height:196px;margin:0 12px;border-radius:18px;background:linear-gradient(135deg,#6760b7,#8171c8 55%,#31a3a8);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center}.hero-symbol{font-size:65px;line-height:1}.hero-category{font-size:11px;letter-spacing:.13em;font-weight:750;margin-top:8px}.detail-body{padding:15px 17px}.detail-body h4{margin:0;color:var(--primary);font-size:24px;line-height:1.1}.detail-body .place{font-size:11px;color:var(--secondary);font-weight:650;margin-top:5px}.detail-body .summary{font-size:12px;margin:13px 0}.info-card{background:#fff;border-radius:11px;padding:9px 11px;font-size:11px;margin:7px 0;box-shadow:0 1px 4px #24334b12}.info-card b{display:block;color:#6e7b88;font-size:9px;text-transform:uppercase;letter-spacing:.06em}.detail-text{font-size:10px;line-height:1.4;color:#3c4a59;margin-top:12px}.visit-button{display:block;text-align:center;background:var(--primary);color:#fff;border-radius:10px;font-size:12px;font-weight:700;padding:11px;margin-top:12px}
+    .map-screen{position:relative;background:#e2ebdc}.map-area{position:absolute;inset:76px 0 0;background:linear-gradient(28deg,transparent 0 28%,#fff9 28% 32%,transparent 32% 58%,#fff9 58% 62%,transparent 62%),linear-gradient(118deg,transparent 0 20%,#fff8 20% 24%,transparent 24% 72%,#fff8 72% 76%,transparent 76%),repeating-linear-gradient(0deg,#d3e4d2 0 42px,#e6efdf 42px 85px)}.map-water{position:absolute;top:140px;left:-35px;width:95px;height:380px;background:#a8d9e3;border-radius:50%;transform:rotate(-18deg);opacity:.78}.map-block{position:absolute;background:#f9eee4;border:2px solid #ddd6c8;border-radius:8px;transform:rotate(-18deg)}.block-a{width:83px;height:75px;top:112px;left:81px}.block-b{width:67px;height:92px;top:295px;left:188px}.block-c{width:58px;height:67px;top:380px;left:91px}.map-pin{position:absolute;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border:3px solid #fff;border-radius:50%;color:#fff;box-shadow:0 3px 8px #283d4166;font-size:18px}.map-pin.visited:after{content:"✓";position:absolute;right:-5px;bottom:-6px;width:15px;height:15px;border:2px solid #fff;border-radius:50%;background:var(--secondary);font-size:10px;line-height:12px;text-align:center}.pin-a{top:124px;left:136px}.pin-b{top:243px;left:201px}.pin-c{top:340px;left:95px}.pin-d{top:429px;left:192px}.map-card{position:absolute;left:13px;right:13px;bottom:18px;background:#fff;border-radius:15px;box-shadow:0 8px 25px #203d4b36;padding:13px;display:flex;gap:10px;align-items:center}.map-card .symbol-bubble{width:42px;height:42px;font-size:20px}.map-card strong{display:block;font-size:13px}.map-card small{display:block;font-size:10px;color:#657280}.map-card .arrow{margin-left:auto;color:var(--primary);font-size:22px}
+    .settings-screen{background:#f2f2f7}.settings-nav{height:44px;background:#fbfbfc;display:flex;align-items:center;justify-content:center;position:relative;font-size:14px}.settings-nav span{position:absolute;right:13px;color:#007aff;font-size:13px}.section-label{margin:32px 17px 7px;font-size:10px;color:#6f6f74}.setting-row{height:45px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 16px;font-size:13px}.toggle{width:42px;height:25px;padding:2px;border-radius:99px;background:#34c759}.toggle i{display:block;width:21px;height:21px;margin-left:auto;border-radius:50%;background:#fff;box-shadow:0 1px 3px #0003}.settings-help{margin:11px 17px;font-size:10px;color:#777783}
+    .total td{font-weight:800;background:#f5f6fa}.submission{padding:22px 25px;border-left:4px solid var(--primary);background:#f6f5fa}footer{padding:20px 54px 27px;border-top:1px solid var(--line);font-size:12px;color:#687689}
+    @media(max-width:850px){.intro,.task{grid-template-columns:1fr}.task{gap:23px}.meta{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.sheet{width:100%;margin:0;box-shadow:none}.masthead{padding:32px 22px}main{padding:26px 22px 43px}footer{padding:20px 22px}}
+    @media print{body{background:#fff}.sheet{width:100%;margin:0;box-shadow:none}.masthead{-webkit-print-color-adjust:exact;print-color-adjust:exact}.task{break-inside:avoid}.phone{box-shadow:none}.file-link{display:none}}
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <header class="masthead">
+      <p class="eyebrow">COSC3062 / COSC3063 · iPhone Software Engineering</p>
+      <h1>Campus Compass</h1>
+      <p class="subtitle">App Development Test</p>
+      <div class="meta"><div><small>Duration</small><strong>120 minutes</strong></div><div><small>Total</small><strong>100 marks</strong></div><div><small>Deliverable</small><strong>One iOS app</strong></div><div><small>Frameworks</small><strong>SwiftUI · MapKit · SwiftData</strong></div></div>
+    </header>
+    <main>
+      <p class="lead">Build an iPhone app that helps students discover useful campus places and record the places they have visited. Implement the five screens and interactions below. Match the visual references in portrait orientation.</p>
+      <div class="intro">
+        <section class="box tinted">
+          <h2>Instructions</h2>
+          <ol>
+            <li>Create a new Xcode iOS app project named <strong>Campus Compass</strong>.</li>
+            <li>Build all five screens with SwiftUI. Use navigation and sheets as specified.</li>
+            <li>Read the four places from the supplied <code>spots.json</code>. Do not enter their content directly in the views.</li>
+            <li>Organise the code into <strong>Model</strong>, <strong>ViewModel</strong>, and <strong>View</strong> groups. Use an observation approach for changing UI state.</li>
+            <li>Use <strong>SwiftData</strong> to store visited place IDs and <strong>AppStorage</strong> to store the appearance preference.</li>
+            <li>The finished app must build and run on an iPhone simulator.</li>
+          </ol>
+        </section>
+        <section class="box">
+          <h2>Provided data</h2>
+          <p>The JSON file contains four places. Each object has an ID, name, category, building, summary, description, opening hours, SF Symbol name, latitude, and longitude.</p>
+          <a class="file-link" href="campus-compass-assets/spots.json" download>Download spots.json ↗</a>
+          <p><strong>Order:</strong> Learning Commons, Makerspace, Garden Courtyard, Campus Café.</p>
+          <p>Use the SF Symbols named in the JSON. The preview glyphs represent the symbols; the final app should use native SF Symbols.</p>
+        </section>
+      </div>
+
+      <h2>Colours and layout</h2>
+      <div class="table-wrap"><table><thead><tr><th>Colour asset</th><th>Light</th><th>Dark</th><th>Use</th></tr></thead><tbody>
+        <tr><td>Primary</td><td><span class="swatch" style="background:#483d8b"></span><code>#483D8B</code></td><td><span class="swatch" style="background:#B8ACFF"></span><code>#B8ACFF</code></td><td>Main headings and buttons</td></tr>
+        <tr><td>Secondary</td><td><span class="swatch" style="background:#087f8c"></span><code>#087F8C</code></td><td><span class="swatch" style="background:#6CD0D2"></span><code>#6CD0D2</code></td><td>Supporting text and progress</td></tr>
+        <tr><td>AppBackground</td><td><span class="swatch" style="background:#f4f6fa"></span><code>#F4F6FA</code></td><td><span class="swatch" style="background:#111827"></span><code>#111827</code></td><td>Screen background</td></tr>
+        <tr><td>Study / Create / Relax / Food</td><td colspan="2"><span class="swatch" style="background:#5a67d8"></span><code>#5A67D8</code> &nbsp; <span class="swatch" style="background:#c56736"></span><code>#C56736</code> &nbsp; <span class="swatch" style="background:#3f8f67"></span><code>#3F8F67</code> &nbsp; <span class="swatch" style="background:#b6537a"></span><code>#B6537A</code></td><td>Category icons and map markers</td></tr>
+      </tbody></table></div>
+      <p>Use standard iOS system typography. The visual references give approximate sizes; preserve hierarchy, spacing, and readability across iPhone screen widths.</p>
+
+      <h2>Screen requirements</h2>
+      <section class="task" id="welcome"><div>
+        <h3><span class="task-id">TASK 01</span>Welcome <span class="marks">10 marks</span></h3>
+        <p>Show this screen when the app starts.</p>
+        <ul>
+          <li>Centre a large circular compass mark, approximately <strong>170 × 170 pt</strong>. Construct it from SwiftUI shapes and an arrow or suitable SF Symbol. Use Primary and Secondary.</li>
+          <li>Place the title <strong>Campus Compass</strong> underneath in bold system text at approximately <strong>38 pt</strong>, followed by the subtitle <strong>Find your next place</strong> in Secondary at approximately <strong>18 pt</strong>.</li>
+          <li>Show your name and student ID on separate, centred lines near the main button.</li>
+          <li>A rounded Primary button labelled <strong>Explore Campus</strong> opens the Places screen. Back navigation returns to Welcome.</li>
+        </ul>
+      </div><div><p class="preview-label">Visual reference · Welcome</p><div class="phone"><div class="screen welcome-screen"><div class="compass"><div class="needle"></div><div class="needle-dot"></div></div><h4>Campus Compass</h4><div class="tagline">Find your next place</div><div class="student">Your Name<br>Your Student ID</div><div class="cta">Explore Campus</div></div></div><p class="caption">One centred column with generous empty space.</p></div></section>
+
+      <section class="task" id="places"><div>
+        <h3><span class="task-id">TASK 02</span>Places <span class="marks">20 marks</span></h3>
+        <p>Display the four JSON places in file order.</p>
+        <ul>
+          <li>Use a large navigation title <strong>Places</strong>. Put a map button and a gear button at the right of the navigation bar.</li>
+          <li>At the top of the content, display <strong>“X of 4 visited”</strong> and a thin progress bar showing the visited fraction. Animate changes to the progress bar.</li>
+          <li>Add an <strong>All / Visited</strong> segmented control. All shows every place; Visited shows only places with a SwiftData visit record. When none are visited, display a centred <strong>No places visited yet</strong> message.</li>
+          <li>Each row contains a <strong>60 pt circular category icon</strong> with the correct category colour, the name in bold, building underneath, and category in Secondary. Show a small checkmark at the right when visited.</li>
+          <li>Tap a row to open its Detail screen. The map button opens Map; the gear opens Settings as a sheet.</li>
+        </ul>
+      </div><div><p class="preview-label">Visual reference · Places, two visited</p><div class="phone"><div class="screen" style="background:#fff"><div class="status"><span>9:41</span><span>●●● ▰</span></div><div class="nav-large"><b>Places</b><div class="nav-icons"><span>⌖</span><span>⚙</span></div></div><div class="mini-count"><strong>2 of 4 visited</strong><div class="progress"><span></span></div></div><div class="segmented"><span class="selected">All</span><span>Visited</span></div><div class="spot-row"><div class="symbol-bubble study">▤</div><div><strong>Learning Commons</strong><small>Library Building, Level 2</small><em>Study</em></div><div class="check">✓</div></div><div class="spot-row"><div class="symbol-bubble create">⚒</div><div><strong>Makerspace</strong><small>Technology Building, Level 1</small><em>Create</em></div></div><div class="spot-row"><div class="symbol-bubble relax">♣</div><div><strong>Garden Courtyard</strong><small>Central Courtyard</small><em>Relax</em></div><div class="check">✓</div></div><div class="spot-row"><div class="symbol-bubble food">☕</div><div><strong>Campus Café</strong><small>Student Centre, Ground Floor</small><em>Food</em></div></div></div></div><p class="caption">Circular category symbols replace photos in this app.</p></div></section>
+
+      <section class="task" id="detail"><div>
+        <h3><span class="task-id">TASK 03</span>Place detail <span class="marks">22 marks</span></h3>
+        <p>All displayed content must correspond to the selected JSON place.</p>
+        <ul>
+          <li>Show an inline navigation bar with a Back control and the place name. The content below it scrolls vertically.</li>
+          <li>Create a rounded hero panel, approximately <strong>220 pt high</strong>, using the category colour. Centre a large SF Symbol and the uppercase category name in this panel.</li>
+          <li>Below the panel, show the place name in bold Primary text at approximately <strong>30 pt</strong>, then the building in Secondary. Show the summary as a separate paragraph.</li>
+          <li>Show an <strong>Opening hours</strong> information card and the full description. Use about <strong>18 pt</strong> horizontal content padding.</li>
+          <li>At the bottom, use a full-width button labelled <strong>Mark as Visited</strong> or <strong>Remove Visit</strong>, depending on current state. Saving or removing a visit updates the list and map immediately and persists after relaunch.</li>
+        </ul>
+      </div><div><p class="preview-label">Visual reference · Learning Commons</p><div class="phone"><div class="screen"><div class="status" style="background:#fff"><span>9:41</span><span>●●● ▰</span></div><div class="nav-small"><span class="back">‹ Places</span><b>Learning Commons</b><span></span></div><div class="detail-hero"><div class="hero-symbol">▤</div><div class="hero-category">STUDY</div></div><div class="detail-body"><h4>Learning Commons</h4><div class="place">Library Building, Level 2</div><p class="summary">A bright shared study space with long tables and charging points.</p><div class="info-card"><b>Opening hours</b>08:00–21:00</div><p class="detail-text">The Learning Commons offers open seating for individual work and small study groups. Large windows provide daylight, while power outlets and campus Wi-Fi make it suitable for longer sessions.</p><div class="visit-button">Mark as Visited</div></div></div></div><p class="caption">The full description continues below the visible area.</p></div></section>
+
+      <section class="task" id="map"><div>
+        <h3><span class="task-id">TASK 04</span>Campus map <span class="marks">20 marks</span></h3>
+        <p>Use MapKit and the coordinates supplied in the JSON file.</p>
+        <ul>
+          <li>Show an inline navigation title <strong>Map</strong> and a Back control. Centre the initial map region so all four places are visible.</li>
+          <li>Place one marker for each spot at its latitude and longitude. Use the category colour and SF Symbol for each marker. A visited marker should display a visible checkmark or another clear visited indicator.</li>
+          <li>When a marker is tapped, show a compact bottom card with the place icon, name, building, and a chevron or <strong>View Details</strong> control.</li>
+          <li>Tapping the bottom card opens the selected place's Detail screen. Returning to Map keeps the selected marker and reflects any visit change.</li>
+          <li>The map must support normal panning and zooming. It must not require the user's current location.</li>
+        </ul>
+      </div><div><p class="preview-label">Visual reference · Map</p><div class="phone"><div class="screen map-screen"><div class="status" style="background:#fff"><span>9:41</span><span>●●● ▰</span></div><div class="nav-small"><span class="back">‹ Places</span><b>Map</b><span></span></div><div class="map-area"><div class="map-water"></div><div class="map-block block-a"></div><div class="map-block block-b"></div><div class="map-block block-c"></div><div class="map-pin study pin-a visited">▤</div><div class="map-pin create pin-b">⚒</div><div class="map-pin relax pin-c visited">♣</div><div class="map-pin food pin-d">☕</div></div><div class="map-card"><div class="symbol-bubble study">▤</div><div><strong>Learning Commons</strong><small>Library Building, Level 2</small></div><div class="arrow">›</div></div></div></div><p class="caption">Map tiles vary by simulator and network state; match the marker and card layout.</p></div></section>
+
+      <section class="task" id="settings"><div>
+        <h3><span class="task-id">TASK 05</span>Settings <span class="marks">10 marks</span></h3>
+        <p>Present Settings as a modal sheet from the Places screen.</p>
+        <ul>
+          <li>Use an inline navigation title <strong>Settings</strong> and a top-right <strong>Done</strong> button that dismisses the sheet.</li>
+          <li>Use a grouped Form with one <strong>Appearance</strong> section containing a native switch labelled <strong>Dark Mode</strong>.</li>
+          <li>Switching appearance changes every screen immediately and keeps text, markers, buttons, and cards readable. Persist the setting with AppStorage.</li>
+          <li>The setting must remain after the app is closed and reopened.</li>
+        </ul>
+      </div><div><p class="preview-label">Visual reference · Settings</p><div class="phone"><div class="screen settings-screen"><div class="status" style="background:#fbfbfc"><span>9:41</span><span>●●● ▰</span></div><div class="settings-nav"><b>Settings</b><span>Done</span></div><div class="section-label">APPEARANCE</div><div class="setting-row"><span>Dark Mode</span><span class="toggle"><i></i></span></div><p class="settings-help">Choose the appearance used throughout Campus Compass.</p></div></div><p class="caption">Use native Form and Toggle styling.</p></div></section>
+
+      <h2>Technical marks <span class="marks">18 marks</span></h2>
+      <div class="table-wrap"><table><thead><tr><th>Criterion</th><th class="score">Marks</th></tr></thead><tbody>
+        <tr><td>Decode all four JSON records into suitable models and handle a missing or invalid file without crashing.</td><td class="score">6</td></tr>
+        <tr><td>Separate model, view model, and view responsibilities; use observation so the interface responds to data changes.</td><td class="score">4</td></tr>
+        <tr><td>Use SwiftData correctly for unique visited-place records and persistent read, insert, and delete operations.</td><td class="score">4</td></tr>
+        <tr><td>The app builds, navigates correctly, and avoids clipped or overlapping content on an iPhone simulator.</td><td class="score">4</td></tr>
+        <tr class="total"><td>Total, including Tasks 01–05</td><td class="score">100</td></tr>
+      </tbody></table></div>
+      <h2>Acceptance checks</h2>
+      <ol>
+        <li>Launch the app and open Places. Confirm all four names, buildings, categories, and icons match the JSON order.</li>
+        <li>Open Learning Commons, mark it visited, return to Places, and confirm the count becomes <strong>1 of 4 visited</strong> and the progress bar advances.</li>
+        <li>Select the Visited segment. Confirm only Learning Commons appears. Remove its visit and confirm the empty state appears.</li>
+        <li>Open Map. Confirm four markers appear. Select Campus Café, open its detail from the bottom card, and mark it visited. Return to Map and confirm its marker indicates visited status.</li>
+        <li>Terminate and relaunch the app. Confirm the visit is retained. Turn Dark Mode on, relaunch again, and confirm the appearance remains dark.</li>
+      </ol>
+      <h2>Submission</h2>
+      <div class="submission">Submit the complete Xcode project, including <code>spots.json</code> and all required asset colour definitions. Verify the final project on an iPhone simulator before submission.</div>
+    </main>
+    <footer>Campus Compass · App Development Test · 120 minutes · 100 marks</footer>
+  </div>
+</body>
+</html>
